@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 1582517395}
   - component: {fileID: 1582517394}
   m_Layer: 0
-  m_Name: ChunkManager
+  m_Name: WorldManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -487,8 +487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 421400732}
-  chunkTerrainPrefab: {fileID: 2804604343784222528, guid: 1084e9284b5440f4a9dac0e8b9a3a06f, type: 3}
-  worldDiameter: 5
+  chunkPrefab: {fileID: 2804604343784222528, guid: 1084e9284b5440f4a9dac0e8b9a3a06f, type: 3}
+  worldDiameter: 3
 --- !u!4 &1582517395
 Transform:
   m_ObjectHideFlags: 0
