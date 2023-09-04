@@ -387,8 +387,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 332113756}
   chunkPrefab: {fileID: 2804604343784222528, guid: 1084e9284b5440f4a9dac0e8b9a3a06f, type: 3}
-  worldDiameter: 5
+  worldDimension: {x: 10, y: 10}
   meshCollider: {fileID: 1582517396}
+  centerOffset: {x: 0, y: -5}
 --- !u!4 &1582517395
 Transform:
   m_ObjectHideFlags: 0
