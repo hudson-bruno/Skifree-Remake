@@ -8,12 +8,13 @@ public class WorldManager : MonoBehaviour
 {
     public Transform target;
     public GameObject chunkPrefab;
-    public int worldDiameter = 3;
+    public Vector2 worldDimension;
     public MeshCollider meshCollider;
+    public Vector2 centerOffset;
 
     private Dictionary<Vector3Int, GameObject> chunks = new Dictionary<Vector3Int, GameObject>();
     private Vector3 chunkSize;
-    private float offset;
+    private Vector2 offset;
     private Vector3 lastUpdatedTargetPos = Vector3.one;
     private GameObject chunkTerrainPrefab; 
 
@@ -24,7 +25,7 @@ public class WorldManager : MonoBehaviour
         Vector3 ogChunkTerrainScale = chunkTerrainPrefab.transform.localScale;
 
         chunkSize = new Vector3(ogChunkTerrainSize.x * ogChunkTerrainScale.x, ogChunkTerrainSize.y * ogChunkTerrainScale.y, ogChunkTerrainSize.z * ogChunkTerrainScale.z);
-        offset = Mathf.FloorToInt(worldDiameter / 2f);
+        offset = new Vector2(Mathf.FloorToInt(worldDimension.x / 2f) + centerOffset.x, Mathf.FloorToInt(worldDimension.y / 2f) + centerOffset.y);
 
         ManageChunkGeneration();
     }
@@ -55,13 +56,13 @@ public class WorldManager : MonoBehaviour
         HashSet<Vector3Int> chunkKeysToDelete = chunks.Keys.ToHashSet();
 
         // generate new chunks if necessary
-        for (int x = 0; x < worldDiameter; x++)
+        for (int x = 0; x < worldDimension.x; x++)
         {
-            float relativeXPosition = (x - offset) * chunkSize.x;
-            for (int z = 0; z < worldDiameter; z++)
+            float relativeXPosition = (x - offset.x) * chunkSize.x;
+            for (int z = 0; z < worldDimension.y; z++)
             {
-                float relativeZPosition = (z - offset) * angledZOffset;
-                float relativeYPosition = (z - offset) * angledYOffset;
+                float relativeZPosition = (z - offset.y) * angledZOffset;
+                float relativeYPosition = (z - offset.y) * angledYOffset;
 
                 Vector3 pos = new Vector3(
                     relativeXPosition + newTargetPos.x,
