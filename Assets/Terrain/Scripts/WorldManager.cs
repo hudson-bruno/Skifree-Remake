@@ -9,8 +9,9 @@ public class WorldManager : MonoBehaviour
     public Transform target;
     public GameObject chunkPrefab;
     public int worldDiameter = 3;
+    public MeshCollider meshCollider;
 
-    private Dictionary<Vector3, GameObject> chunks = new Dictionary<Vector3, GameObject>();
+    private Dictionary<Vector3Int, GameObject> chunks = new Dictionary<Vector3Int, GameObject>();
     private Vector3 chunkSize;
     private float offset;
     private Vector3 lastUpdatedTargetPos = Vector3.one;
@@ -51,7 +52,7 @@ public class WorldManager : MonoBehaviour
             return; 
         }
 
-        HashSet<Vector3> chunkKeysToDelete = chunks.Keys.ToHashSet();
+        HashSet<Vector3Int> chunkKeysToDelete = chunks.Keys.ToHashSet();
 
         // generate new chunks if necessary
         for (int x = 0; x < worldDiameter; x++)
@@ -67,14 +68,19 @@ public class WorldManager : MonoBehaviour
                     newTargetPos.y - relativeYPosition,
                     relativeZPosition + newTargetPos.z
                 );
+                Vector3Int posKey = new Vector3Int(
+                    Mathf.RoundToInt(pos.x / chunkSize.x),
+                    Mathf.RoundToInt(pos.y / angledYOffset),
+                    Mathf.RoundToInt(pos.z / angledZOffset)
+                );
 
-                if (chunks.ContainsKey(pos))
+                if (chunks.ContainsKey(posKey))
                 {
-                    chunkKeysToDelete.Remove(pos);
+                    chunkKeysToDelete.Remove(posKey);
                 }
                 else
                 {
-                    chunks.Add(pos, Instantiate(chunkPrefab, pos, Quaternion.identity, transform));
+                    chunks.Add(posKey, Instantiate(chunkPrefab, pos, Quaternion.identity, transform));
                 }
             }
         }
@@ -88,5 +94,34 @@ public class WorldManager : MonoBehaviour
         }
 
         lastUpdatedTargetPos = newTargetPos;
+
+        MergeChunksTerrainMesh();
+    }
+
+    void MergeChunksTerrainMesh()
+    {
+        MeshFilter[] meshFilters = new MeshFilter[chunks.Count];
+
+        int i = 0;
+        foreach(var chunk in chunks.Values)
+        {
+            meshFilters[i] = chunk.GetComponent<ChunkManager>().terrain.GetComponent<MeshFilter>();
+            i++;
+        }
+
+        CombineInstance[] combine = new CombineInstance[meshFilters.Length];
+
+        i = 0;
+        while (i < meshFilters.Length)
+        {
+            combine[i].mesh = meshFilters[i].sharedMesh;
+            combine[i].transform = meshFilters[i].transform.localToWorldMatrix;
+
+            i++;
+        }
+
+        Mesh mesh = new Mesh();
+        mesh.CombineMeshes(combine);
+        meshCollider.sharedMesh = mesh;
     }
 }

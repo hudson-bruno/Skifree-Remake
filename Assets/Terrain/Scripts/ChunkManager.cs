@@ -7,7 +7,8 @@ public class ChunkManager : MonoBehaviour
 {
     public float minimumDistance = 2f;
     public float padding = 3;
-    public GameObject[] props;
+    public GameObject[] staticProps;
+    public GameObject[] dinamicProps;
     public GameObject terrain;
 
     void Start()
@@ -33,7 +34,17 @@ public class ChunkManager : MonoBehaviour
                 Mathf.Cos(terrain.transform.rotation.eulerAngles.x * Mathf.Deg2Rad) * projectedPoints[i].y
             ) + transform.position;
 
-            Instantiate(props[Random.Range(0, props.Length - 1)], pos, meshRenderer.transform.rotation, transform);
+            int randomIndex = Random.Range(0, staticProps.Length + dinamicProps.Length);
+            if (randomIndex < staticProps.Length)
+            {
+                GameObject prop = staticProps[randomIndex];
+                Instantiate(prop, pos, prop.transform.rotation, transform);
+            }
+            else
+            {
+                GameObject prop = dinamicProps[randomIndex - staticProps.Length]; 
+                Instantiate(prop, pos, prop.transform.rotation);
+            }
         }
     }
 }

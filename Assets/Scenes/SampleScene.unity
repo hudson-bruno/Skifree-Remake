@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 421400729}
   - component: {fileID: 421400728}
   - component: {fileID: 421400733}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -466,6 +466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1582517395}
+  - component: {fileID: 1582517396}
   - component: {fileID: 1582517394}
   m_Layer: 0
   m_Name: WorldManager
@@ -488,7 +489,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 421400732}
   chunkPrefab: {fileID: 2804604343784222528, guid: 1084e9284b5440f4a9dac0e8b9a3a06f, type: 3}
-  worldDiameter: 3
+  worldDiameter: 5
+  meshCollider: {fileID: 1582517396}
 --- !u!4 &1582517395
 Transform:
   m_ObjectHideFlags: 0
@@ -504,6 +506,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1582517396
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582517393}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 18
+  m_Mesh: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
