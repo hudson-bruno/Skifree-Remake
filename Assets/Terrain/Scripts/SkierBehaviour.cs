@@ -19,7 +19,6 @@ public class SkierBehaviour : MonoBehaviour
         {
             Vector3 direction = Quaternion.AngleAxis(90, Vector3.right) * hit.normal;
             rb.velocity = direction * initialSpeed;
-            Debug.Log(rb.velocity);
         }
     }
 
