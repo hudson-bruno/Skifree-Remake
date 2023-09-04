@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.02
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -131,6 +131,10 @@ PrefabInstance:
     - target: {fileID: 868472399140676562, guid: 7f1e2505aa3931b4191a10856bb0a0fa, type: 3}
       propertyPath: m_Name
       value: InicialPoint 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045694675924524200, guid: 7f1e2505aa3931b4191a10856bb0a0fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5625
       objectReference: {fileID: 0}
     - target: {fileID: 3906764731625301172, guid: 7f1e2505aa3931b4191a10856bb0a0fa, type: 3}
       propertyPath: m_Layer
@@ -389,7 +393,7 @@ MonoBehaviour:
   chunkPrefab: {fileID: 2804604343784222528, guid: 1084e9284b5440f4a9dac0e8b9a3a06f, type: 3}
   worldDimension: {x: 10, y: 10}
   meshCollider: {fileID: 1582517396}
-  centerOffset: {x: 0, y: -5}
+  centerOffset: {x: 0, y: 0}
 --- !u!4 &1582517395
 Transform:
   m_ObjectHideFlags: 0
@@ -525,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6ca72adb4025b45814c491d0338c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraPosition: {fileID: 332113756}
+  CameraPosition: {fileID: 332113758}
   sensX: 300
   sensY: 300
   orientation: {fileID: 332113758}
@@ -567,8 +571,8 @@ Camera:
   m_GameObject: {fileID: 5131398513015826932}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.74509805, g: 0.74509805, b: 0.74509805, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
