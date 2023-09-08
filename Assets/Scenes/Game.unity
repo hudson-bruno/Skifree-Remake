@@ -190,7 +190,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8361156068188636146, guid: 7f1e2505aa3931b4191a10856bb0a0fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1185359850}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3906764731625301172, guid: 7f1e2505aa3931b4191a10856bb0a0fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1970453379}
   m_SourcePrefab: {fileID: 100100000, guid: 7f1e2505aa3931b4191a10856bb0a0fa, type: 3}
 --- !u!4 &332113756 stripped
 Transform:
@@ -471,11 +474,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1417969574 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8930551334359026902, guid: ef3633ff719ba814ca86c764eb67bca4, type: 3}
-  m_PrefabInstance: {fileID: 590521945}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1185359849
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,9 +832,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
-      minScalar: 1
+      minMaxState: 3
+      scalar: 0.3
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -887,7 +885,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -940,7 +938,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -5313,6 +5311,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1417969574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8930551334359026902, guid: ef3633ff719ba814ca86c764eb67bca4, type: 3}
+  m_PrefabInstance: {fileID: 590521945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1582517393
 GameObject:
   m_ObjectHideFlags: 0
