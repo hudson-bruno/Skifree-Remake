@@ -12,7 +12,7 @@ public class StatsPlayer : MonoBehaviour
         if(col.gameObject.tag == "Monster")
         {
             GameOver();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     void GameOver()
