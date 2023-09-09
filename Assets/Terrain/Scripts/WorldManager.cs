@@ -74,6 +74,10 @@ public class WorldManager : MonoBehaviour
                     Mathf.RoundToInt(pos.y / angledYOffset),
                     Mathf.RoundToInt(pos.z / angledZOffset)
                 );
+                if (posKey.z < 0)
+                {
+                    continue;
+                }
 
                 if (chunks.ContainsKey(posKey))
                 {
