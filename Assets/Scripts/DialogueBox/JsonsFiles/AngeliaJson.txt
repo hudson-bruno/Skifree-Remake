@@ -1,0 +1,22 @@
+{
+	"progress": 0,
+	"dialogs": [{
+			"name_dialogue_box": "SkiMan",
+			"speech": "bla bla bla bla bla"
+		},
+		{
+			"name_dialogue_box": "Angelina",
+			"speech": "ahhhhhhhhhhh"
+		},
+		{
+			"name_dialogue_box": "SkiMan",
+			"speech": "bla bla bla bla"
+		},
+		{
+			"name_dialogue_box": "Angelina",
+			"speech": "aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+		}
+
+
+	]
+}
