@@ -1,51 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class Score : MonoBehaviour
 {
-    public Transform InicialPoint;
-    public Transform PlayerPoint;
+    public Rigidbody playerRigidbody;
 
     public TextMeshProUGUI Points;
     public TextMeshProUGUI Textkm_h;
 
-    private float Current_z;
-    public float km_h;
-
-    private float countsec = 0;
-    void Start()
+    private void Update()
     {
-        Current_z = InicialPoint.transform.position.z;
+        float distance = Mathf.Floor(playerRigidbody.transform.position.z);
+        Points.text = "Distance: " + (distance > 0 ? distance : 0);
 
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        Points.text =("Distance: ")+ Mathf.Round(Mathf.Abs((InicialPoint.transform.position.z - PlayerPoint.transform.position.z)/10)).ToString();
-
-        KM_h();
-    }
-
-    void KM_h()
- 
-    {
-        countsec += Time.deltaTime;
-        if (countsec > 1)
-        {
-            km_h = Mathf.Round(((Current_z - PlayerPoint.transform.position.z) * -360) / 100);
-
-            Current_z = PlayerPoint.transform.position.z;
-
-            Textkm_h.text = "Km/h: " + km_h.ToString();
-            countsec = 0;
-        }
-
-
+        float kmH = Mathf.Floor(Mathf.Abs(playerRigidbody.velocity.z) * 3.6f);
+        Textkm_h.text = "Km/h: " + (distance > 0 ? kmH : 0);
     }
 }
