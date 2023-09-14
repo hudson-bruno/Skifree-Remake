@@ -146,7 +146,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17151469}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c04fb1fbcc0c1ad44bf61e08e863b060, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -521,6 +521,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3906764731625301172, guid: 7f1e2505aa3931b4191a10856bb0a0fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1970453385}
+    - targetCorrespondingSourceObject: {fileID: 3906764731625301172, guid: 7f1e2505aa3931b4191a10856bb0a0fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1970453390}
   m_SourcePrefab: {fileID: 100100000, guid: 7f1e2505aa3931b4191a10856bb0a0fa, type: 3}
 --- !u!4 &332113756 stripped
 Transform:
@@ -6612,6 +6615,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   maxBuildupSpeed: 10
+--- !u!114 &1970453390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970453373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d9ec2be93c27f4aa5dbd1bfa3ee5fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &132509698262059472
 RectTransform:
   m_ObjectHideFlags: 0

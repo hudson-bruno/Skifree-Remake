@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class MonsterSkiFree : MonoBehaviour
 {
-    public Transform Player;
+    public Transform playerTransform;
     public float Speed = 0.3f;
     private Vector3 DirectinToPlayer;
     private Vector3 groundPosition;
@@ -14,9 +14,9 @@ public class MonsterSkiFree : MonoBehaviour
 
     Vector3 point1, point2, point3, normal;
 
-    void Start()
+    void Awake()
     {
-        
+        playerTransform = Player.Instance.transform;
     }
 
     // Update is called once per frame
@@ -26,11 +26,11 @@ public class MonsterSkiFree : MonoBehaviour
         DodgeTree();
         directionPlayer();
         GoingToGround();
-        transform.position = Vector3.MoveTowards(this.transform.position, Player.position, Speed);
+        transform.position = Vector3.MoveTowards(this.transform.position, playerTransform.position, Speed);
     }
     public void directionPlayer()
     {
-        DirectinToPlayer = (Player.transform.position - this.transform.position).normalized;
+        DirectinToPlayer = (playerTransform.transform.position - this.transform.position).normalized;
 
     }
     public void GoingToGround() 
@@ -49,7 +49,7 @@ public class MonsterSkiFree : MonoBehaviour
     {
         RaycastHit hit;
        
-        if(Player.transform.position.x > this.transform.position.x)    //Caso tenha algo entre o jogador e o monstro vai add 10 ou -10 to x do monstro para desviar
+        if(playerTransform.transform.position.x > this.transform.position.x)    //Caso tenha algo entre o jogador e o monstro vai add 10 ou -10 to x do monstro para desviar
             directionToDodge = 10;
         else { directionToDodge = -10; }
         
