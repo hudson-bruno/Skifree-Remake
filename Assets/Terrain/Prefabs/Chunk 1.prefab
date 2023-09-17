@@ -61,8 +61,8 @@ MonoBehaviour:
   - {fileID: 3366199045977720251, guid: 9f6d80b429eaa004ead15768834383cf, type: 3}
   dinamicProps:
   - {fileID: 7841299520287255679, guid: 4576e9f023b4ecf439c8ade89cfab96b, type: 3}
-  - {fileID: 955499532928673898, guid: 60addcf7a5550b64ea2045427a41f9a6, type: 3}
-  - {fileID: 955499532928673898, guid: aa985c9cb1fee734e943b2db85cfd483, type: 3}
+  - {fileID: 2697375489646893685, guid: 2f0960b965948644b99441fa9643761e, type: 3}
+  - {fileID: 2697375489646893685, guid: bccdde8d991674d49a151af33beded78, type: 3}
   terrain: {fileID: 5518477809055412269}
   monsterPrefab: {fileID: 4917415280982047422, guid: cec9c409acacf2542b94995dda3ebdb0, type: 3}
   monsterSpawnRadius: 10
