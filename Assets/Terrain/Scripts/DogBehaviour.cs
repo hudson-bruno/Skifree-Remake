@@ -7,6 +7,14 @@ public class DogBehaviour : MonoBehaviour
     public float speed;
     public Animator animator;
 
+    public AudioClip[] clips;
+    public AudioSource audioSource;
+
+    public void Reset()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         transform.Translate(Vector3.left * speed * Time.deltaTime);   
@@ -22,5 +30,6 @@ public class DogBehaviour : MonoBehaviour
     {
         animator.SetBool("Barking", true);
         speed = 0;
+        audioSource.PlayOneShot(clips[Random.Range(0, clips.Length)]); 
     }
 }
