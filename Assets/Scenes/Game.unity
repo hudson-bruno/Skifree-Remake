@@ -1197,7 +1197,7 @@ GameObject:
   - component: {fileID: 705507994}
   - component: {fileID: 705507996}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Principal-Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7767,6 +7767,7 @@ GameObject:
   - component: {fileID: 3632590020653917580}
   - component: {fileID: 6129227821745194257}
   - component: {fileID: 6129227821745194258}
+  - component: {fileID: 6129227821745194259}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7870,6 +7871,22 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &6129227821745194259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131398513015826932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20aeac7dc114f6541bd63f7b2a97a825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerp_time: 1
+  my_color: {r: 0.26415092, g: 0.021181917, b: 0.021181917, a: 0}
+  my_color_light: {r: 0, g: 0, b: 0, a: 0}
+  light: {fileID: 705507994}
 --- !u!114 &6176562768309475736
 MonoBehaviour:
   m_ObjectHideFlags: 0
