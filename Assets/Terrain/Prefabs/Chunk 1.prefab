@@ -64,7 +64,7 @@ MonoBehaviour:
   - {fileID: 2697375489646893685, guid: 2f0960b965948644b99441fa9643761e, type: 3}
   - {fileID: 2697375489646893685, guid: bccdde8d991674d49a151af33beded78, type: 3}
   terrain: {fileID: 5518477809055412269}
-  monsterPrefab: {fileID: 4917415280982047422, guid: cec9c409acacf2542b94995dda3ebdb0, type: 3}
+  monsterPrefab: {fileID: 8488583440048849238, guid: 501d3b707a43b4b44b52f325adcd2a32, type: 3}
   monsterSpawnRadius: 100
   spawnMonsterDistance: 100
 --- !u!23 &-9048387408887390799

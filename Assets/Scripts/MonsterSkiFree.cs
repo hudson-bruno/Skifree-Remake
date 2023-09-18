@@ -31,8 +31,13 @@ public class MonsterSkiFree : MonoBehaviour
     public void directionPlayer()
     {
         DirectinToPlayer = (playerTransform.transform.position - this.transform.position).normalized;
+        //transform.LookAt(-DirectinToPlayer, normal);/
+        Quaternion rotation = Quaternion.LookRotation(DirectinToPlayer, Vector3.up);
+        transform.rotation = rotation;
 
+        Debug.DrawRay(transform.position, DirectinToPlayer, Color.cyan);
     }
+
     public void GoingToGround() 
     {
         RaycastHit hit;
@@ -60,39 +65,23 @@ public class MonsterSkiFree : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(this.transform.position, new Vector3(this.transform.position.x + directionToDodge, transform.position.y, transform.position.z), Speed);
             }
-
         }
-
     }
     void normalAngle()
     {
 
         RaycastHit hit;
 
-        Vector3 ray1 = (transform.TransformDirection(new Vector3(-0.3f, -0.5f, 0.5f)).normalized);
-        Vector3 ray2 = (transform.TransformDirection(new Vector3(0.3f, -0.5f, 0.5f)).normalized);
-        Vector3 ray3 = transform.TransformDirection(new Vector3(0, -1, 0));
+        Vector3 ray = transform.TransformDirection(Vector3.down);
 
-        if (Physics.Raycast(transform.position, ray1, out hit))
+        if (Physics.Raycast(transform.position, ray, out hit))
         {
-            point1 = hit.point;
+            normal = hit.normal;
+            Debug.DrawRay(transform.position, normal * 4, Color.green);
+
+            //transform.rotation = Quaternion.FromToRotation(Vector3.up, normal);
         }
 
-        if (Physics.Raycast(transform.position, ray2, out hit))
-        {
-            point2 = hit.point;
-
-        }
-
-        if (Physics.Raycast(transform.position, ray3, out hit))
-        {
-            point3 = hit.point;
-        }
-
-        normal = Vector3.Cross(point1 - point3, point2 - point3);
-        Debug.DrawRay(transform.position, normal, Color.green);
-
-        transform.rotation = Quaternion.FromToRotation(Vector3.up, normal);
     }
 
 
