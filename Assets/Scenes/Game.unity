@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028547, g: 0.22571668, b: 0.30692494, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028523, g: 0.22571632, b: 0.3069254, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1290,6 +1290,7 @@ GameObject:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
   - component: {fileID: 705507996}
+  - component: {fileID: 705507997}
   m_Layer: 0
   m_Name: Principal-Light
   m_TagString: Untagged
@@ -1397,6 +1398,19 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &705507997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea03c68b80e67524c915a24e882064bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightComponent: {fileID: 705507994}
 --- !u!1001 &800331009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8000,7 +8014,6 @@ GameObject:
   - component: {fileID: 3632590020653917580}
   - component: {fileID: 6129227821745194257}
   - component: {fileID: 6129227821745194258}
-  - component: {fileID: 6129227821745194259}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8104,22 +8117,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &6129227821745194259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5131398513015826932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20aeac7dc114f6541bd63f7b2a97a825, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerp_time: 1
-  my_color: {r: 0.26415092, g: 0.021181917, b: 0.021181917, a: 0}
-  my_color_light: {r: 0, g: 0, b: 0, a: 0}
-  light: {fileID: 705507994}
 --- !u!114 &6176562768309475736
 MonoBehaviour:
   m_ObjectHideFlags: 0
