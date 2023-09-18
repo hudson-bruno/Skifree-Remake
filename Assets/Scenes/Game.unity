@@ -1335,6 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08f749d7ab8aa2439be5b71c47c9f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jsonDialogues: {fileID: 4900000, guid: cf37787f0aa74a7418585f3130041668, type: 3}
   toolTipPosition: {fileID: 372057333}
 --- !u!136 &814954837
 CapsuleCollider:
@@ -1425,8 +1426,6 @@ Transform:
   - {fileID: 372057333}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &818530755 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26bdbea067f850945a834fd8f2e65a27, type: 3}
@@ -1746,7 +1745,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cb9881f9237072408d060b49f69376d, type: 3}
->>>>>>> Stashed changes
 --- !u!1 &903889091
 GameObject:
   m_ObjectHideFlags: 0
@@ -7513,14 +7511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1970453381}
   speed: 1000
-<<<<<<< Updated upstream
   maxForwardWalkSpeed: 20
-=======
-  jumpForce: 5
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  maxBuildupSpeed: 10
 --- !u!1 &1997983792
 GameObject:
   m_ObjectHideFlags: 0
@@ -7570,7 +7561,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!224 &132509698262059472
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8233,9 +8223,6 @@ SceneRoots:
   - {fileID: 590521945}
   - {fileID: 903889092}
   - {fileID: 814954840}
-<<<<<<< Updated upstream
-=======
   - {fileID: 890699003}
   - {fileID: 1880561824}
   - {fileID: 1997983794}
->>>>>>> Stashed changes
